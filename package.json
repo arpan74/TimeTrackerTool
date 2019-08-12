@@ -1,0 +1,14 @@
+{
+  "name": "timetracker",
+  "version": "1.0.0",
+  "description": "Track how much time you spend on projects and store it as a ics",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Arpan Gupta",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.1"
+  }
+}
