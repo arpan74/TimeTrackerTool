@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="photon/css/photon.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Time Tracker</title>
+  </head>
+  <body>
+    <div class="window">
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Time Tracker</h1>
+      </header>
+
+      <div class="window-content">
+        <form>
+          <div class="padded">
+            <button
+              class="btn btn-default pull-right"
+              id="Settings"
+              type="button"
+            >
+              <span class="icon icon-cog"></span>
+            </button>
+          </div>
+          <div class="form-group padded-more" id="EventNameInputGroup">
+            <label for="EventName" style="display:block">Task Name</label>
+            <input
+              type="text"
+              name="EventName"
+              class="form-control"
+              id="eventNameText"
+            />
+          </div>
+
+          <div
+            class="form-group padded-more middle"
+            id="EventStartTimeInputGroup"
+          >
+            <label for="startTime" style="display:block">Start Time</label>
+            <input
+              type="datetime-local"
+              name="startTime"
+              class="form-control"
+              id="startTimeDate"
+            />
+            <button class="btn btn-default" id="now" type="button">
+              <span class="icon icon-clock"></span>
+            </button>
+          </div>
+
+          <div class="form-group padded-more middle">
+            <button class="btn btn-positive" type="button" id="startTracking">
+              Start Tracking
+            </button>
+            <button class="btn btn-negative" type="button" id="endTracking">
+              End Tracking
+            </button>
+          </div>
+
+          <div class="padded-more middle">
+            <span>Elapsed Time:</span>
+            <span id="diff"></span>
+          </div>
+          <div class="padded-more middle tracking">
+            <button class="btn btn-negative" id="resetTracking" type="button">
+              Reset Tracker
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      require("./index.js");
+    </script>
+  </body>
+</html>

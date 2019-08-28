@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="photon/css/photon.min.css" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <div class="window-content">
+      <form>
+        <div class="padded-more" id="EventNameInputGroup">
+          <label style="display:block">
+            Select Folder for .ics files
+          </label>
+          <input
+            type="file"
+            name="SaveLocation"
+            class="form-control"
+            id="SaveLoc"
+            webkitdirectory
+          />
+        </div>
+        <div class="padded-more">
+          <button class="btn btn-default" type="button" id="fileLoc">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      require("./settings.js");
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Tray } = require("electron");
+const { app, BrowserWindow, Tray, ipcMain, webContents } = require("electron");
 
 let tray;
 let window;
@@ -17,15 +17,26 @@ const createTray = () => {
   tray = new Tray(`${__dirname}/static/IconTemplate.png`);
 };
 
+ipcMain.on("fileLocation", (event, path) => {
+  window.webContents.send("fileLocation", path);
+});
+
 const createWindow = () => {
   window = new BrowserWindow({
-    width: 300,
-    height: 450,
+    width: 325,
+    height: 425,
+    //width: 800,
+    //height: 800,
     show: false,
     frame: false,
     fullscreenable: false,
-    resizable: false
+    resizable: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
+  //window.webContents.openDevTools();
+  window.loadURL(`file://${__dirname}/index.html`);
 };
 
 const getWindowPosition = () => {
@@ -45,7 +56,10 @@ const showWindow = () => {
   const { x, y } = getWindowPosition();
   window.setPosition(x, y, false);
   window.show();
-  window.focus();
+  window.setVisibleOnAllWorkspaces(true); // put the window on all screens
+  window.focus(); // focus the window up front on the active screen
+  window.setVisibleOnAllWorkspaces(false); // disable all screen behavior
+  window.webContents.send("newStartTime");
 };
 
 const toggleWindow = () => {
