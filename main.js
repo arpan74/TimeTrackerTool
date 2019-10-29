@@ -25,8 +25,6 @@ const createWindow = () => {
   window = new BrowserWindow({
     width: 325,
     height: 425,
-    //width: 800,
-    //height: 800,
     show: false,
     frame: false,
     fullscreenable: false,
@@ -35,7 +33,6 @@ const createWindow = () => {
       nodeIntegration: true
     }
   });
-  //window.webContents.openDevTools();
   window.loadURL(`file://${__dirname}/index.html`);
 };
 
