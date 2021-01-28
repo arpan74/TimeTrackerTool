@@ -9,7 +9,7 @@
   "author": "Arpan Gupta",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^6.0.1",
+    "electron": "^9.4.0",
     "electron-packager": "^14.0.5"
   },
   "dependencies": {
